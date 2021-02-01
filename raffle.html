@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Raffle</title>
+        <script>
+            function pick(){
+                const names = document.getElementById('names').value.split('\n');
+                document.getElementById('winner').innerHTML = names[Math.floor(Math.random() * (names.length))]
+            }
+        </script>
+        <style>
+            body, html{
+                background-color: rgb(30, 30, 30);
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 10px;
+                font-size: 20px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            #screen{
+                border: none;
+                position: relative;
+                top: 50px;
+                color: white;
+            }
+            button{
+                background-color: rgb(37, 37, 38);
+                border: none;
+                border-radius: 10px;
+                color: white;
+                height: 120px;
+                width: 120px;
+                font-size: 35px;
+            }
+            h1{
+                color: white;
+                position: relative;
+                top: 40px;
+                font-size: 100px;
+            }
+            textarea {
+                height: 139px;
+                width: 356px;
+                position: relative;
+                bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>RAFFLE!</h1>
+            <div id="screen">
+                <textarea name="names" id="names" cols="30" rows="10" placeholder="Enter Names Here..."></textarea>
+                <br>
+                <button onclick="pick()">Pick Winner</button>
+                <br>
+                <div id="winner"></div>
+                </div>
+        </center>
+    </body>
+</html>
